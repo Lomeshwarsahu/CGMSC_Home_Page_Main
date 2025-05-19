@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,10 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material-module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 // import { MatTableExporterModule } from 'mat-table-exporter';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { ServiceWorkerModule } from '@angular/service-worker';
+// import { environment } from '../environments/environment';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +25,21 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserAnimationsModule,NgbCollapseModule
     // , MatTableExporterModule
     ,MaterialModule, 
+    GoogleMapsModule,
      NgxSpinnerModule.forRoot({ type: 'ball-atom' }),
+     ServiceWorkerModule.register('ngsw-worker.js', {
+       enabled: !isDevMode(),
+       // Register the ServiceWorker as soon as the application is stable
+       // or after 30 seconds (whichever comes first).
+       registrationStrategy: 'registerWhenStable:30000'
+     }),
+
+    //  ServiceWorkerModule.register('ngsw-worker.js', {
+    //   enabled: environment.production,
+    // }),
     //  NgxSpinnerModule.forRoot({ type: 'line-scale-party' }),
   ],
-  providers: [provideHttpClient() ],
+  providers: [provideHttpClient(),{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

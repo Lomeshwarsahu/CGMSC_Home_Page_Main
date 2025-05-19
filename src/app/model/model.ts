@@ -55,3 +55,27 @@ export interface Data_model {
   }
 //#endregion
 
+export interface WarehouseInfo{
+  warehouseid: number;
+  warehousename: string;
+  nosfac: number;
+  address: string;
+  email: string;
+  latitude: string;
+  longitude: string;
+  nosvehicle: number;
+  nosdist: number;
+  moB1: string;
+  position:any;
+
+  // "warehouseid": 2614,
+  // "warehousename": "Bilaspur",
+  // "nosfac": 214,
+  // "address": "Bilaspur Ratanpur Main Road Vill.- Sendari Near State Mental Hospital,   ",
+  // "email": "bilaspurwh.cgmsc@gov.in",
+  // "latitude": "22.1760124",
+  // "longitude": "82.1228984",
+  // "nosvehicle": 4,
+  // "nosdist": 3,
+  // "moB1": "7773006983"
+}

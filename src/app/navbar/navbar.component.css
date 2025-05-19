@@ -1,10 +1,10 @@
-.preview-box {
+/* .preview-box {
     padding: 20px;
     margin-top: 20px;
     border: 1px solid #ddd;
     text-align: center;
     transition: all 0.3s ease;
-  }
+  } */
   
 
 
@@ -12,7 +12,9 @@
   .color-selector {
     display: flex;
     gap: 5px;
-    margin: 3px;
+    margin: 2px;
+    /* background-color: blue; */
+   
   }
   
   .color-input {

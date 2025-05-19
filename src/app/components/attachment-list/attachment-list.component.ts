@@ -32,9 +32,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrl: './attachment-list.component.css',
 })
 export class AttachmentListComponent {
-  dataSource!: MatTableDataSource<ContentAttachment>;
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild('sort') sort!: MatSort;
+  dataSource!: MatTableDataSource<ContentAttachment>;
   dispatchData: ContentAttachment[] = [];
   ContentHeader_data: ContentHeader[] = [];
   selectedColor:any;
@@ -74,10 +74,10 @@ export class AttachmentListComponent {
       // console.log(attachment_Id);
       // name: 'Drug-Technical' 
     this.name=params['name'];
-      this.GetContentAttachment(params['Id']);
-      this.GetContentHeader(params['Id']);
-    });
-    this.spinner.show();
+    this.GetContentHeader(params['Id']);
+    // this.GetContentAttachment(params['Id']);
+  });
+  this.spinner.show();
 
     setTimeout(() => {
       this.spinner.hide();
@@ -100,10 +100,10 @@ export class AttachmentListComponent {
         (res) => {
           this.ContentHeader_data=res;
         this.spinner.hide();
-
+        this.GetContentAttachment(attachment_Id);
           // this.ContentHeader_data=res[0]
           // console.log('GetContentHeader=:',res);
-          console.log('GetContentHeader2=:',this.ContentHeader_data);
+          // console.log('GetContentHeader2=:',this.ContentHeader_data);
         },
         (error) => {
           alert(`Error fetching data: ${JSON.stringify(error.message)}`);

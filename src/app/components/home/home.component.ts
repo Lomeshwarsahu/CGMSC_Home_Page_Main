@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { NavbarComponent } from 'src/app/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // ngClass ke liye ye bhi
 import { AuthServiceService } from 'src/app/guards/auth-service.service';
 import { ApiServiceService } from 'src/app/service/api-service.service';
-import { Data_model } from 'src/app/model/model';
+import { Data_model, WarehouseInfo } from 'src/app/model/model';
 import { RouterModule } from '@angular/router';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as AOS from 'aos';
+import { GoogleMapsModule } from '@angular/google-maps';
 declare var bootstrap: any;
+import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
+import { WarehouseLocationComponent } from '../warehouse-location/warehouse-location.component';
+import { DivisionOfficeLocationComponent } from '../division-office-location/division-office-location.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent,FormsModule,CommonModule,RouterModule,],
+  imports: [NavbarComponent,FormsModule,CommonModule,RouterModule,GoogleMapsModule,
+    DivisionOfficeLocationComponent,WarehouseLocationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  // isDefaultDashboardRoute = true;
   isCollapsed = false;
   selectedColor = '#563d7c'; 
   data_model: Data_model []=[];
@@ -26,12 +30,25 @@ export class HomeComponent {
   CivilTenderList: Data_model []=[];
   OtherTenderList: Data_model []=[];
   VisitedContentList: Data_model []=[];
+  warehouseInfo: WarehouseInfo[] = [];
   // pauseScroll: boolean = false;
   card1Pause = false;
   card2Pause = false;
   card3Pause = false;
   card4Pause = false;
-  constructor(public authService: AuthServiceService, private router: Router,private ApiService:ApiServiceService) {
+  zoom = 20;
+center: google.maps.LatLngLiteral = {
+  // lat: 21.136663,  
+  // lng: 81.78665921
+  lat: 21.136478,  
+  lng: 81.78643421
+};
+
+markerOptions: google.maps.MarkerOptions = {
+  draggable: false
+};
+@ViewChild(MapInfoWindow, { static: false }) infoWindow!: MapInfoWindow;
+  constructor(public authService: AuthServiceService, private router: Router,private ApiService:ApiServiceService,private cdRef: ChangeDetectorRef) {
     // this.router.events.subscribe(() => {
     //   const current = this.router.url;
     //   this.isDefaultDashboardRoute = current === '/dashboard';
@@ -46,8 +63,54 @@ export class HomeComponent {
     });
     // this.GetDrugTenderList();
    this.GetAllTenderLists();
-  //  this.isNewContent("2025-07-28T00:00:00")
+  
   }
+  openInfo(marker: MapMarker) {
+    this.infoWindow.open(marker);
+  }
+  onPauseStart(index:any) {
+    // debugger;
+    if(index==1){
+      this.card1Pause = true;
+      this.cdRef.detectChanges();
+      return;
+    }else if(index==2){
+      this.card2Pause = true;
+      this.cdRef.detectChanges();
+      return;
+    }else if(index==2){
+      this.card3Pause = true;
+      this.cdRef.detectChanges();
+      return;
+    }else{
+      this.card4Pause = true;
+      this.cdRef.detectChanges();
+    }
+  }
+  
+  onPauseEnd(index:any) {
+    // debugger;
+    if(index==1){
+      this.card1Pause = false;
+      this.cdRef.detectChanges();
+      return;
+    }else if(index==2){
+      this.card2Pause = false;
+      this.cdRef.detectChanges();
+      return;
+    }else if(index==2){
+      this.card3Pause = false;
+      this.cdRef.detectChanges();
+      return;
+    }else{
+      this.card4Pause = false;
+      this.cdRef.detectChanges();
+    }
+    // this.card2Pause = false;
+    // this.cdRef.detectChanges();
+  }
+
+
 
   GetAllTenderLists() {
     // debugger
@@ -99,6 +162,7 @@ export class HomeComponent {
   }
   
   onButtonClick(attachment_Id:any,name:string){
+    // alert('hi')
     // console.log(attachment_Id);
     // this.router.navigate(['/AttachmentList']);
     this.router.navigate(['/AttachmentList'], { 
@@ -277,4 +341,20 @@ export class HomeComponent {
     this.selectedIndex = (this.selectedIndex + 1) % this.images.length;
   }
 
+  
+
+
+
+
+  
+isOpen = false;
+height = 300; // or dynamically calculate it
+
+toggle() {
+  this.isOpen = !this.isOpen;
+}
+
+onEnd() {
+  // handle post-transition logic
+}
 }

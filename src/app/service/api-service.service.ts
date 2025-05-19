@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Base } from '../helper/base';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { WarehouseInfo } from '../model/model';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,6 +33,16 @@ export class ApiServiceService {
   // https://www.cgmsc.gov.in/himis_apin/api/WebCgmsc/GetCivilTenderList?n=2
   // https://www.cgmsc.gov.in/himis_apin/api/WebCgmsc/GetOtherTenderList?n=2
   // https://www.cgmsc.gov.in/himis_apin/api/WebCgmsc/GetMostVisitedContentList?n=2
+  
+  // https://dpdmis.in/CGMSCHO_API2/api/HOD/WarehouseInfo?distid=0
+
+  // getWarehouseInfo(distid: any): Observable<any> {
+  //   return this.http.get<WarehouseInfo[]>(${this.CGMSCHO_API2}/HOD/WarehouseInfo?distid=${distid});
+  // }
+  getWarehouseInfo(distid: any): Observable<any> {
+    return this.http.get<WarehouseInfo[]>(`https://dpdmis.in/CGMSCHO_API2/api/HOD/WarehouseInfo?distid=${distid}`);
+  }
+
   public get(url: string, options?: any): Observable <any> {
      return this.http.get(this.baseUrl + url, options); 
      }

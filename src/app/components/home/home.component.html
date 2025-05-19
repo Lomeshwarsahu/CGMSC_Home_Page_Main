@@ -1,3 +1,4 @@
+
 <app-navbar></app-navbar>
 <!-- <div class="container my-4">
   <button class="btn btn-outline-primary d-flex align-items-center" type="button" (click)="toggleCollapse()"
@@ -21,22 +22,25 @@
   <h2>Live Theme Preview</h2>
   <p>The background changes based on your color choice!</p>
 </div> -->
-
+<!-- F:\CGMSC\CGMSC_Home_Page\src\assets\images\equipment-reagents.jpg
+  F:\CGMSC\CGMSC_Home_Page\src\assets\images\doctor-s-hand-holding-pills.jpg
+  F:\CGMSC\CGMSC_Home_Page\src\assets\images\infrastructure.jpg 
+  F:\CGMSC\CGMSC_Home_Page\src\assets\images\hero Grouped medicines 1600px.png-->
 <!-- <div *ngIf="isDefaultDashboardRoute"> -->
 <section class="image-section border-top  ">
-  <div class="carousel slide h-100" id="imageSectionCarousel" data-bs-ride="carousel">
-    <div class="carousel-inner h-100">
+  <div class="carousel slide h-100 " id="imageSectionCarousel" data-bs-ride="carousel">
+    <div class="carousel-inner h-100 ">
       <div class="carousel-item active h-100">
-        <img src="assets\cgmsc imgs\photo_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="img1">
+        <img src="\assets\images\equipment-reagents.jpg" class="d-block w-100 h-100 object-fit-cover" alt="img1">
       </div>
       <div class="carousel-item h-100">
-        <img src="assets\cgmsc imgs\photo_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="img2">
+        <img src="\assets\images\doctor-s-hand-holding-pills.jpg" class="d-block w-100 h-100 object-fit-cover" alt="img2">
       </div>
       <div class="carousel-item h-100">
-        <img src="assets\cgmsc imgs\photo_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="img3">
+        <img src="\assets\images\infrastructure.jpg " class="d-block w-100 h-100 object-fit-cover" alt="img3">
       </div>
       <div class="carousel-item h-100">
-        <img src="assets\cgmsc imgs\photo_4.jpg" class="d-block w-100 h-100 object-fit-cover" alt="img4">
+        <img src="\assets\images\hero Grouped medicines 1600px.png" class="d-block w-100 h-100 object-fit-cover" alt="img4">
       </div>
     </div>
 
@@ -51,11 +55,11 @@
     </button>
   </div>
 </section>
-<section class="mb-5 pb-0 py-5 px-5">
-  <div class="container-fluid py-0 px-0">
+<section class="mb-5 pb-0 py-5 px-5"  >
+  <div class="container-fluid py-0 px-0"  >
     <div class="row">
       <!-- Left Side: About CGMSCL  data-aos="fade-up" data-aos-duration="1000" -->
-      <div class="col-12 col-lg-6 mb-4 mb-lg-0" style="z-index: 99999;">
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0"  >
         <h2 class="mb-3 fw-semibold Heading-font-family" style="font-size: 26px;">About CGMSCL</h2>
         <p class="mb-3">
           Welcome to <strong>CGMSCL</strong> — Chhattisgarh Medical Services Corporation Limited is incorporated on
@@ -68,7 +72,19 @@
         <a class="btn btn-outline-light d-inline-flex align-items-center theme-navbar text-white" routerLink="/AboutCGMSC" routerLinkActive="active">
           <i class="bi bi-book-fill me-2 "></i> Read More...
         </a>
-        
+        <!-- <div class="accordion-item custom-accordion">
+        <h2 class="accordion-header" style="z-index: 99999;">
+          <button 
+            class="accordion-button text-dark fw-bold custom-btn"
+            [class.collapsed]="!isAccordionOpen"
+            (click)="toggleAccordion()" 
+            type="button"
+            [attr.aria-expanded]="isAccordionOpen">
+            Click here
+          </button>
+        </h2>
+        </div> -->
+       
         <!-- <a class="btn btn-outline-primary d-inline-flex align-items-center"
         [routerLink]="['/dashboard', 'AboutCGMSC']" 
         [routerLinkActive]="'active'">
@@ -193,58 +209,60 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row g-4 justify-content-center" >
-      <!-- Card 1 data-aos="fade-up" data-aos-duration="1000"-->
-      <div class="col-md-4">
-        <div class="card h-100 text-white p-4" style="background-color: #4891f1 ; border-radius: 10px; ">
-          <h5 class="card-title border-bottom pb-2"><strong>Our Mission</strong></h5>
-          <div class="card-body px-0 pt-2 pb-3">
-            <p class="card-text" style="text-align: justify;">
-              Ensure the reach of Quality & Affordable healthcare services in a transparent and equitable manner to each
-              and every person of the state of Bihar...
-            </p>
-          </div>
+  
 
-          <a href="#" type="button" class="btn btn-outline-light mt-auto w-fit px-4 py-2 theme-navbar text-white"
-            style="max-width: max-content; z-index: 99999;">
-            <i class="bi bi-chevron-double-right me-2 "></i> Read More
-          </a>
-        </div>
-      </div>
-
-      <!-- Duplicate the card structure for more cards -->
-      <div class="col-md-4">
-        <div class="card h-100 text-white p-4" style="background-color: #19bcfd; border-radius: 10px; ">
-          <h5 class="card-title border-bottom pb-2"><strong>Our Vision</strong></h5>
-          <div class="card-body px-0 pt-2 pb-3">
-            <p class="card-text" style="text-align: justify;">
-              To become a leading organization in managing public healthcare logistics, ensuring availability of
-              essential supplies to all citizens...
-            </p>
-          </div>
-          <a href="#" class="btn btn-outline-light mt-auto w-fit px-4 py-2 theme-navbar text-white" style="max-width: max-content;  z-index: 99999;">
-            <i class="bi bi-chevron-double-right me-2"></i> Read More
-          </a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 text-white p-4" style="background-color: #19d6ad; border-radius: 10px;">
-          <h5 class="card-title border-bottom pb-2"><strong>Our Values</strong></h5>
-          <div class="card-body px-0 pt-2 pb-3">
-            <p class="card-text" style="text-align: justify; font-family: 'Times New Roman', Times, serif;">
-              We believe in transparency, accountability, timely service
-              delivery, and putting the well-being of people first in all our operations...
-            </p>
-          </div>
-          <!-- <a href="#" class="btn btn-outline-light mt-auto w-fit px-4 py-2" style="max-width: max-content;">
-            <i class="bi bi-chevron-double-right me-2"></i> Read More
-          </a> -->
-        </div>
+  <!-- <div class="accordion" >
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button 
+          class="accordion-button fw-bold text-dark"
+          [class.collapsed]="!isOpen"
+          (click)="toggle()"
+          [attr.aria-expanded]="isOpen">
+          Click here
+        </button>
+      </h2>
+      <div class="accordion-collapse"
+           [style.height.px]="isOpen ? height : 0"
+           [style.opacity]="isOpen ? 1 : 0"
+           [style.padding]="isOpen ? '1rem' : '0 1rem'"
+           (transitionend)="onEnd()">
+           <div class="accordion-body">
+            hello lomesh
+           </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <!-- <button type="button "
+  class="btn accordion-button fw-bold text-dark btn-sm"
+  [class.collapsed]="!isOpen"
+  (click)="toggle()"
+  [attr.aria-expanded]="isOpen ? 'true' : 'false'">Click me</button> -->
+ 
+
+
+  <!-- <div class="accordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button fw-bold text-dark"
+                [class.collapsed]="!isOpen"
+                (click)="toggle()"
+                [attr.aria-expanded]="isOpen">
+          Click here
+        </button>
+      </h2>
+      <div class="accordion-collapse"
+           [ngStyle]="{
+             height: isOpen ? height + 'px' : '0',
+             opacity: isOpen ? 1 : 0,
+             padding: isOpen ? '1rem' : '0 1rem'
+           }"
+           (transitionend)="onEnd()">
+        <div class="accordion-body">hello lomesh</div>
+      </div>
+    </div>
+  </div> -->
+  
 </section>
 
 
@@ -255,7 +273,7 @@
 
 <!-- [style.background]="selectedColor" -->
 
-<section class="py-5 pt-0 text-white position-relative announce-colorr theme-navbar" 
+<!-- <section class="py-5 pt-0 text-white position-relative announce-colorr theme-navbar" 
   >
   <div class="container-fluid px-3 text-center py-5">
     <p class="mb-3 Heading-font-family" >LATEST UPDATES</p>
@@ -263,59 +281,41 @@
 </section>
 
 
-
-
-
-<!-- <div class="container-fluid">
-  <div class="row g-4">
-    <div class="col-12 col-md-6 col-lg-3" *ngFor="let card of cards">
-      <div class="card shadow-lg p-4 border bg-white rounded h-100">
-        <h5 class="card-title border-bottom pb-2"><strong>{{ card.title }}</strong></h5>
-        <div class="card-body px-0 pt-2 pb-3" style="height: 300px; overflow: hidden; position: relative;">
-          <div class="scroll-container" [class.paused]="pauseScroll" (mouseenter)="pauseScroll = true" (mouseleave)="pauseScroll = false">
-            <div *ngFor="let item of card.items" class="mb-3" style="text-align: justify;">
-              <a class="nav-link text-primary" (click)="onButtonClick(item.attachment_Id, card.type)">
-                {{ item.content_Subject }} {{ item.attachment_Id }}
-              </a>
-               <p class="card-text text-primary" style="text-align: justify;">
-                Ensure the reach of Quality & Affordable healthcare services ...
-              </p>
-              <p class="card-text text-dark" style="text-align: justify;">
-                in a transparent and equitable manner to each and every person of the state of Bihar...
-              </p>
-            </div>
-          </div>
-          <div class="text-end mt-3">
-            <a class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" [routerLink]="card.link">
-              <i class="bi bi-eye me-2"></i> View More...
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- Overlapping Cards Start -->
 <div class="position-relative" style="z-index: 2;">
   <div class="container-fluid position-absolute top-100 start-50 translate-middle px-3 w-100">
     <div class="row justify-content-center g-4 newpe">
       <div class="container-fluid">
-        <div class="row g-4">
-      
+        <div class="row g-4"> -->
+      <!-- FIXED START: Make cards appear below About section, not overlapping -->
+<section class="py-5 pt-0 text-white position-relative announce-colorr theme-navbar">
+  <div class="container-fluid px-3 text-center py-5">
+    <p class="mb-3 Heading-font-family">LATEST UPDATES</p>
+  </div>
+</section>
+
+<!-- REMOVE position-absolute and use normal flow style="margin-top: -5rem !important;"-->
+<div class="container-fluid px-1" > <!-- Use negative margin if you want overlap -->
+  <div class="row justify-content-center g-4 newpe" >
+    <div class="row g-4">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-3" >
             <div class="card shadow-lg p-4 border bg-white rounded h-100">
               <h5 class="card-title border-bottom border-3 pb-2 text-center gradient-heading "><strong>Drug Tenders</strong></h5>
               <div class="card-body px-0 pt-2 pb-3" style="height: 300px; overflow: hidden; position: relative;">
-                <div
+                <!-- <div
                   class="scroll-container"
                   [class.paused]="card1Pause"
                   (mouseenter)="card1Pause = true"
                   (mouseleave)="card1Pause = false"
                   (touchstart)="card1Pause = true"
-                  (touchend)="card1Pause = false"
-                  >
+                  (touchend)="card1Pause = false" > -->
+                  <div
+                  class="scroll-container"
+                  [class.paused]="card1Pause"
+                  (mouseenter)="onPauseStart(1)"
+                  (mouseleave)="onPauseEnd(1)"
+                  (touchstart)="onPauseStart(1)"
+                  (touchend)="onPauseEnd(1)" >
                   <div *ngFor="let item of DrugTenderList" class="mb-3" style="text-align: justify;">
                     <a class="nav-link tender-link" (click)="onButtonClick(item.attachment_Id, 'Drug-Technical')">
                       <span *ngIf="isNewContent(item.content_Publising_Date)" class="badge-new">New</span>
@@ -340,16 +340,25 @@
             <div class="card shadow-lg p-4 border bg-white rounded h-100">
               <h5 class="card-title border-bottom border-3  pb-2 text-center gradient-heading "><strong>Equipment Tenders</strong></h5>
               <div class="card-body px-0 pt-2 pb-3" style="height: 300px; overflow: hidden; position: relative;">
-                <!-- <div class="scroll-container" [class.paused]="pauseScroll" 
-                (mouseenter)="pauseScroll = true" (mouseleave)="pauseScroll = false"> -->
-                <div
+                <!-- <div class="scroll-container" [class.paused]="card2Pause" 
+                (mouseenter)="card2Pause = true" (mouseleave)="card2Pause = false" 
+                 > -->
+                <!-- (touchend)="resumeScrollWithDelay()" -->
+              <!-- <div
                 class="scroll-container"
                 [class.paused]="card2Pause"
                 (mouseenter)="card2Pause = true"
                 (mouseleave)="card2Pause = false"
                 (touchstart)="card2Pause = true"
-                (touchend)="card2Pause = false">
-                 
+                (touchend)="resumeScrollWithDelay()">  -->
+                <div
+                class="scroll-container"
+                [class.paused]="card2Pause"
+                (mouseenter)="onPauseStart(2)"
+                (mouseleave)="onPauseEnd(2)"
+                (touchstart)="onPauseStart(2)"
+                (touchend)="onPauseEnd(2)" >
+              
                   <div *ngFor="let item of EquipmentList" class="mb-3" style="text-align: justify;">
                     <a class="nav-link tender-link" (click)="onButtonClick(item.attachment_Id, 'Equipment-Technical')">
                       <span *ngIf="isNewContent(item.content_Publising_Date)" class="badge-new">New</span>
@@ -372,12 +381,19 @@
               <h5 class="card-title border-bottom border-3  pb-2 text-center gradient-heading "><strong>Infrastructure Tenders</strong></h5>
               <div class="card-body px-0 pt-2 pb-3" style="height: 300px; overflow: hidden; position: relative;">
                 <!-- <div class="scroll-container" [class.paused]="pauseScroll" (mouseenter)="pauseScroll = true" (mouseleave)="pauseScroll = false"> -->
-                  <div
+                  <!-- <div
                   class="scroll-container"
                   [class.paused]="card3Pause"
                   (mouseenter)="card3Pause = true"
                   (mouseleave)="card3Pause = false" (touchstart)="card3Pause = true"
-                  (touchend)="card3Pause = false">
+                  (touchend)="card3Pause = false"> -->
+                  <div
+                  class="scroll-container"
+                  [class.paused]="card3Pause"
+                  (mouseenter)="onPauseStart(3)"
+                  (mouseleave)="onPauseEnd(3)"
+                  (touchstart)="onPauseStart(3)"
+                  (touchend)="onPauseEnd(3)" >
                   <div *ngFor="let item of CivilTenderList" class="mb-3" style="text-align: justify;">
                     <a class="nav-link tender-link" (click)="onButtonClick(item.attachment_Id, 'Civil')">
                       <span *ngIf="isNewContent(item.content_Publising_Date)" class="badge-new">New</span>
@@ -400,12 +416,19 @@
               <h5 class="card-title border-bottom border-3  pb-2 text-center gradient-heading "><strong>Other Tenders</strong> </h5>
               <div class="card-body px-0 pt-2 pb-3" style="height: 300px; overflow: hidden; position: relative;">
                 <!-- <div class="scroll-container" [class.paused]="pauseScroll" (mouseenter)="pauseScroll = true" (mouseleave)="pauseScroll = false"> -->
-                  <div
+                  <!-- <div
                   class="scroll-container"
                   [class.paused]="card4Pause"
                   (mouseenter)="card4Pause = true"
                   (mouseleave)="card4Pause = false" (touchstart)="card4Pause = true"
-                  (touchend)="card4Pause = false">
+                  (touchend)="card4Pause = false"> -->
+                  <div
+                  class="scroll-container"
+                  [class.paused]="card4Pause"
+                  (mouseenter)="onPauseStart(4)"
+                  (mouseleave)="onPauseEnd(4)"
+                  (touchstart)="onPauseStart(4)"
+                  (touchend)="onPauseEnd(4)">
                   <div *ngFor="let item of OtherTenderList" class="mb-3" style="text-align: justify;">
                     <a class="nav-link tender-link" (click)="onButtonClick(item.attachment_Id, 'Other Tender (Technical)')">
                       <span *ngIf="isNewContent(item.content_Publising_Date)" class="badge-new">New</span>
@@ -424,8 +447,8 @@
       
         </div>
       </div>
-      
-
+    </div>
+ 
       <!-- <div class="col-md-3">
         <div class="card shadow-lg p-4 border bg-white rounded">
           <h5 class="card-title border-bottom pb-2"><strong>Drug Tenders</strong></h5> <br>
@@ -544,9 +567,42 @@
               </div>
             </div> -->
 
+   
+  <!-- 
+</div> -->
+
+
+<!-- <div class="container-fluid">
+  <div class="row g-4">
+    <div class="col-12 col-md-6 col-lg-3" *ngFor="let card of cards">
+      <div class="card shadow-lg p-4 border bg-white rounded h-100">
+        <h5 class="card-title border-bottom pb-2"><strong>{{ card.title }}</strong></h5>
+        <div class="card-body px-0 pt-2 pb-3" style="height: 300px; overflow: hidden; position: relative;">
+          <div class="scroll-container" [class.paused]="pauseScroll" (mouseenter)="pauseScroll = true" (mouseleave)="pauseScroll = false">
+            <div *ngFor="let item of card.items" class="mb-3" style="text-align: justify;">
+              <a class="nav-link text-primary" (click)="onButtonClick(item.attachment_Id, card.type)">
+                {{ item.content_Subject }} {{ item.attachment_Id }}
+              </a>
+               <p class="card-text text-primary" style="text-align: justify;">
+                Ensure the reach of Quality & Affordable healthcare services ...
+              </p>
+              <p class="card-text text-dark" style="text-align: justify;">
+                in a transparent and equitable manner to each and every person of the state of Bihar...
+              </p>
+            </div>
+          </div>
+          <div class="text-end mt-3">
+            <a class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" [routerLink]="card.link">
+              <i class="bi bi-eye me-2"></i> View More...
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<!-- Overlapping Cards Start -->
 
 <!-- Section 2 - Background under the cards #fcecef; -->
 
@@ -564,7 +620,7 @@
       <!-- Video Gallery Column -->
 
       <div class="col-lg-6 mb-2 card rounded px-3 " style="background-color: #e7e9e8;">
-        <h5 class="text-center mb-4 gradient-heading mt-1">Video Gallery</h5>
+        <!-- <h5 class="text-center mb-4 gradient-heading mt-1">Video Gallery</h5> -->
         <div class="my-1">
           <!-- Nav tabs -->
           <ul class="nav nav-tabs border-0" id="myTab" role="tablist" style="border-bottom: 2px solid #f5f5f5;">
@@ -618,7 +674,8 @@
                 <div class="col-md-12 mb-3">
                   <div class="ratio ratio-16x9">
                     <video controls preload="none" width="100%" height="100%">
-                      <!-- <source src="/assets/Videos/CGMSC - (4Min Video).mp4" type="video/mp4"> -->
+                      <!-- F:\CGMSC\CGMSC_Home_Page\src\assets\Videos\cgmsc-video.mp4 -->
+                      <source src="/assets\Videos\cgmsc-video.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -1118,7 +1175,105 @@
   </div>
 </section>
 
+<section class="container-fluid py-2">
+  <!-- <div class="accordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button type="button"
+                class="btn accordion-button fw-bold text-white theme-navbar border-0 p-2 rounded"
+                [class.collapsed]="!isOpen"
+                (click)="toggle()"
+                [attr.aria-expanded]="isOpen ? 'true' : 'false'">
+        <h5>Click me</h5>  
+        </button>
+      </h2>
+     
+    </div>
+  </div> -->
+  <!-- <div class="accordion-collapse"
+  [ngStyle]="{
+    height: isOpen ? height + 'px' : '0',
+    opacity: isOpen ? 1 : 0,
+    padding: isOpen ? '1rem' : '0 1rem'
+  }"
+  (transitionend)="onEnd()">
+  <div class="accordion-body newpee"> -->
+    <div class="container mb-5 ">
+      <div class="row g-4 justify-content-center" >
+        <div class="col-md-4">
+          <div class="card h-100 text-white p-4" style="background-color: #4891f1 ; border-radius: 10px;">
+            <h5 class="card-title border-bottom pb-2"><strong>Our Mission</strong></h5>
+            <div class="card-body px-0 pt-2 pb-3">
+              <p class="card-text" style="text-align: justify;">
+                Ensure the reach of Quality & Affordable healthcare services in a transparent and equitable manner to each
+                and every person of the state of Bihar...
+              </p>
+            </div>
+  
+            <a href="#" type="button" class="btn btn-outline-light mt-auto w-fit px-4 py-2 theme-navbar text-white"
+              >
+              <i class="bi bi-chevron-double-right me-2 "></i> Read More
+            </a>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card h-100 text-white p-4" style="background-color: #19bcfd; border-radius: 10px; ">
+            <h5 class="card-title border-bottom pb-2"><strong>Our Vision</strong></h5>
+            <div class="card-body px-0 pt-2 pb-3">
+              <p class="card-text" style="text-align: justify;">
+                To become a leading organization in managing public healthcare logistics, ensuring availability of
+                essential supplies to all citizens...
+              </p>
+            </div>
+            <a href="#" class="btn btn-outline-light mt-auto w-fit px-4 py-2 theme-navbar text-white">
+              <i class="bi bi-chevron-double-right me-2"></i> Read More
+            </a>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card h-100 text-white p-4" style="background-color: #19d6ad; border-radius: 10px;">
+            <h5 class="card-title border-bottom pb-2"><strong>Our Values</strong></h5>
+            <div class="card-body px-0 pt-2 pb-3">
+              <p class="card-text" style="text-align: justify; font-family: 'Times New Roman', Times, serif;">
+                We believe in transparency, accountability, timely service
+                delivery, and putting the well-being of people first in all our operations...
+              </p>
+            </div>
+            <!-- <a href="#" class="btn btn-outline-light mt-auto w-fit px-4 py-2" style="max-width: max-content;">
+              <i class="bi bi-chevron-double-right me-2"></i> Read More
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div> 
+  <!-- </div> -->
+  <!-- </div> -->
+  </section>
 
+
+  <section class="bg-white  mt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 ">
+          <marquee behavior="scroll" direction="left" >
+            <a href="https://www.india.gov.in/" target="_blank" >
+              <img alt="Natural" class="m-2  border rounded card-hover " src="https://cghealth.nic.in/cghealth/api/files/other-health-portal/india1_gov_in.jpg"></a>
+            <a href="https://meraaspataal.nhp.gov.in/" target="_blank" class="">
+              <img alt="Natural" class="m-2 border rounded card-hover" src="https://cghealth.nic.in/cghealth/api/files/other-health-portal/meraAspatal.jpg"></a>
+            <a href="https://www.mygov.in/" target="_blank">
+              <img alt="Natural" class="m-2 border rounded card-hover" src="https://cghealth.nic.in/cghealth/api/files/other-health-portal/mygov.jpg"></a>
+            <a href="https://data.gov.in/" target="_blank">
+              <img alt="Natural" class="m-2 border rounded card-hover" src="https://cghealth.nic.in/cghealth/api/files/other-health-portal/datagov.jpg"></a>
+            <a href="https://ntcp.mohfw.gov.in/national_tobacco_quit_line_services" target="_blank">
+              <img alt="Natural" class="m-2 border rounded card-hover"
+                src="https://cghealth.nic.in/cghealth/api/files/other-health-portal/quittobaco.jpg"></a>
+          </marquee>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <!-- <section class="py-4 pb-5" style="background-color: #fcecef;"> style="background-color: #fff8f2;"-->
 <section class="py-4 pb-5" >
@@ -1157,39 +1312,63 @@
       <div class="tab-pane fade show active" id="tab11" role="tabpanel">
         <h5 class="text-center gradient-heading">Head Office</h5>
         <div class="container-fluid Card">
-          <div class="custom-map-ratio border rounded shadow">
-            <iframe src="https://www.google.com/maps?q=21.136506,81.786516&z=15&output=embed" allowfullscreen=""
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+            <google-map
+            height="400px"
+            width="100%"
+            [center]="center"
+            [zoom]="zoom">
+          
+            <map-marker
+              [position]="center"
+              [label]="'H'"
+              [title]="'My Marker'"
+              [options]="markerOptions"
+              #marker="mapMarker"
+              (mapClick)="openInfo(marker)"
+             >
+            </map-marker>
+            <map-info-window  #infoWindow="mapInfoWindow">
+              <h3 class="border-bottom">CGMSC head office</h3>
+              <p><strong></strong> 4QPP+MMC</p>
+              <p><strong></strong>Sector 27, Nawagaon Parsatti</p>
+              <p><strong></strong> Atal Nagar-Nava Raipur, Chhattisgarh 492101  India</p>
+              </map-info-window>
+            <!-- <map-info-window  #infoWindow="mapInfoWindow">
+              <strong>CGMSC head office</strong><br />
+              4QPP+MMC<br />
+              Sector 27, Nawagaon Parsatti<br />
+              Atal Nagar-Nava Raipur, Chhattisgarh 492101<br />
+              India
+            </map-info-window> -->
+          </google-map>
         </div>
       </div>
-      <div class="tab-pane fade" id="tab12" role="tabpanel">
+      <div class="tab-pane fade" id="tab12" role="tabpanel" >
         <h5 class="text-center gradient-heading">Warehouse Geo Location</h5>
+        <!-- <ng-container (click)="GetWarehouse_Location()" (click)="logout()"> -->
+
+        
         <div class="container-fluid Card">
-          <div class="custom-map-ratio border rounded shadow">
-            <iframe src="https://www.google.com/maps?q=21.136506,81.786516&z=15&output=embed" allowfullscreen=""
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+          <!-- [center]="center"
+          [zoom]="zoom"
+          [width]="800"
+          [height]="500" -->
+          
+       <app-warehouse-location></app-warehouse-location>
         </div>
       </div>
       <div class="tab-pane fade" id="tab13" role="tabpanel">
         <h5 class="text-center gradient-heading">Division Office</h5>
         <div class="container-fluid Card">
-          <div class="custom-map-ratio border rounded shadow">
-            <iframe src="https://www.google.com/maps?q=21.136506,81.786516&z=15&output=embed" allowfullscreen=""
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+          <app-division-office-location></app-division-office-location>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- </div>
-<router-outlet></router-outlet> -->
+
+
 
 <!-- Image Preview Modal -->
  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true" >

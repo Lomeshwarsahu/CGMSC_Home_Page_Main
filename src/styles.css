@@ -385,48 +385,53 @@ a.nav-link.dropdown-toggle::after {
 
 
 .newpe {
-  padding-top: 260px;
+  /* padding-top: 260px; */
   
-  
+  margin-top : -25rem !important;
 }
 .newpe1{
-  padding-top: 320px;
+  /* padding-top: 320px; */
 }
 
 /* Mobile devices (portrait and landscape) */
 @media (max-width: 768px) {
 /* Styles for mobile devices */
 .newpe {
-
-padding-top: 1511px;
+  margin-top : -9rem !important;
+/* padding-top: 1511px; */
+/* max-height: 100%; */
+        /* padding-top: 133%; */
+        /* padding-bottom: 200%; */
+        /* background-color: blue; */
+        /* height: 100%; */
 }
 .newpe1{
  
-  padding-top: 1549px;
+  /* padding-top: 1549px; */
 }
 }
 
 /* Tablets (portrait and landscape) */
 @media (min-width: 768px) and (max-width: 1024px) {
 /* Styles for tablets like iPads */
-.newpe {
+/* .newpe {
   padding-top: 1511px;
 }
 .newpe1{
  
   padding-top: 1549px;
-}
+} */
 }
 
 /* Desktop devices */
 @media (min-width: 1024px) {
 /* Styles for desktops */
-.newpe {
+/* .newpe {
   padding-top: 260px;
 }
 .newpe1{
   padding-top: 320px;
-}
+} */
 }
 
 @media (min-width: 992px) {
@@ -436,7 +441,7 @@ padding-top: 1511px;
     padding-top: 260px;
   }
   .newpe1{
-    padding-top: 320px;
+    /* padding-top: 320px; */
   }
 }
 

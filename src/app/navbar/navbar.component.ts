@@ -6,6 +6,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ApiServiceService } from '../service/api-service.service';
 import { Base } from '../helper/base';
+declare const bootstrap: any;
 @Component({
     selector: 'app-navbar',
     standalone: true, // ✅ Make it a standalone component
@@ -24,6 +25,11 @@ export class NavbarComponent {
   isTendersOpen = false;
   isGalleryOpen = false;
   isDownloadsOpen = false;
+  isLOGINOpen = false;
+  isDruggOpen = false;
+  isEquipmenttOpen = false;
+  isInfrastructureeOpen = false;
+  isAdminOpen = false;
   isCareersOpen = false;
   activeNav = 'home';
 
@@ -41,12 +47,6 @@ export class NavbarComponent {
        this.selectedColor = storedColor;
      }
      var base = Base.baseUrl
-  }
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    document.body.classList.toggle('bg-dark', this.isDarkMode);
-    document.body.classList.toggle('text-light', this.isDarkMode);
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
   }
 
   ngOnInit() {
@@ -128,4 +128,47 @@ export class NavbarComponent {
       );
     }
   }
+
+  // handleLinkClick(event: MouseEvent) {
+  //   event.preventDefault(); // prevent default anchor behavior
+  //   const offcanvasElement = document.querySelector('.offcanvas.show');
+  //   if (offcanvasElement) {
+  //     const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+  //     bsOffcanvas?.hide();
+  
+  //     // open link after small delay
+  //     setTimeout(() => {
+  //       window.open("https://govthealth.cg.gov.in/hrmis/", '_blank');
+  //     }, 300); // delay matches offcanvas animation time
+  //   } else {
+  //     window.open("https://govthealth.cg.gov.in/hrmis/", '_blank');
+  //   }
+  // }
+  // handleLinkClick(event: MouseEvent) {
+  //   event.preventDefault();
+  //   const offcanvasDismissBtn = document.querySelector('[data-bs-dismiss="offcanvas"]') as HTMLElement;
+  //   if (offcanvasDismissBtn) {
+  //     // Click the offcanvas dismiss button programmatically
+  //     offcanvasDismissBtn.click();
+  //   }
+  //   // Wait for the animation to complete before opening link
+  //   setTimeout(() => {
+  //     window.open("https://govthealth.cg.gov.in/hrmis/", '_blank');
+  //   }, 300); // Bootstrap's default transition duration
+  // }
+  handleLinkClick(event: MouseEvent, url: string) {
+    event.preventDefault();
+  
+    const offcanvasDismissBtn = document.querySelector('[data-bs-dismiss="offcanvas"]') as HTMLElement;
+    if (offcanvasDismissBtn) {
+      // Trigger Bootstrap's native dismissal
+      offcanvasDismissBtn.click();
+    }
+  
+    // Wait until offcanvas animation completes
+    setTimeout(() => {
+      window.open(url, '_blank');
+    }, 300); // Bootstrap default transition duration
+  }
+  
 }
